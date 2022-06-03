@@ -17,10 +17,10 @@ The server has built-in Lua support which allows server hosts to change game beh
 `lib.lua` file is loaded/executed each time the server opens a new map which makes it a good place to bind events and initialize variables.
 
 ### Functions
-The game provides many global functions that can be used to change game's behaviour. Every global Lua function that is loaded can be also used as a command. This includes predefined functions as well as the custom ones. Keep in mind that certain functions may do nothing if the provided arguments are incorrect or Lua can't access game elements for some reasons. [Click here to learn more about available functions](LuaFunctions).
+The game provides many global functions that can be used to change game's behaviour. Every global Lua function that is loaded can be also used as a command. This includes predefined functions as well as the custom ones. Keep in mind that certain functions may do nothing if the provided arguments are incorrect or Lua can't access game elements for some reasons. [Click here to learn more about available functions](RandoLua/Functions.md).
 
 ### Events
-Events are Lua functions that are called by server when certain conditions are met. They have no default implementation, so they can be binded by server hosts to execute custom logic. The best place to do this is `lib.lua` as it's always loaded but it can be done in a different script as well. To bind an event, simply create a global function that has the same name as the event. [Click here to learn more about available events](LuaEvents).
+Events are Lua functions that are called by server when certain conditions are met. They have no default implementation, so they can be binded by server hosts to execute custom logic. The best place to do this is `lib.lua` as it's always loaded but it can be done in a different script as well. To bind an event, simply create a global function that has the same name as the event. [Click here to learn more about available events](RandoLua/Events.md).
 
 ## Using commands in game
 Every text-chat message starting with `/` will be send to server as a command. The server parses commands into Lua function calls. Whitespaces are used as argument seperetors. To provide a string argument, enclose the text inside quotation marks. Examples:
