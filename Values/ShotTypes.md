@@ -1,5 +1,5 @@
 # Shot types
-The list below shows all available shot types and their coresponding values.
+The list below shows all available shot types and their corresponding values.
 
 - 0 - no effects
 - 1 - bouncing (projectiles only)
