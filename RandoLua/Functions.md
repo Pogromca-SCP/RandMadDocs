@@ -21,11 +21,23 @@ Executes Lua script from a provided server file if it exists. Returns true if ex
 ### ServerLog(Message)
 Prints the message into the server log.
 
+### Delay(TimeInSeconds, Command)
+Calls given server command after specified time delay. Function uses the same command format as in-game console. Calling this function before previous delay ends will replace old delay with the new one. Changing or reseting map will cancel the delay.
+
 ### ForceStart()
 Forces a match to start if it hasn't already.
 
+### NextStage()
+Forces a Campaign match to skip current stage.
+
 ### MsgAll(Message[, R, G, B])
 Sends a message with a specific color for all players.
+
+### MsgRed(Message[, R, G, B])
+Sends a message with a specific color for all players in red team.
+
+### MsgBlu(Message[, R, G, B])
+Sends a message with a specific color for all players in blue team.
 
 ### MsgTo(Message, PlayerId[, R, G, B])
 Sends a message with a specific color for selected player.
