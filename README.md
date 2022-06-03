@@ -14,7 +14,7 @@ This is a password that can be used to get access to server commands in game. If
 The server has built-in Lua support which allows server hosts to change game behaviour at runtime using their own scripts. Currently supported Lua version: `5.4.0`.
 
 ### lib.lua
-`lib.lua` file is loaded/executed each time the server opens a new map which makes it a good place to bind events and initialize variables.
+`lib.lua` file is loaded/executed when the server is created which makes it a good place to bind events and initialize variables.
 
 ### Functions
 The game provides many global functions that can be used to change game's behaviour. Every global Lua function that is loaded can be also used as a command. This includes predefined functions as well as the custom ones. Keep in mind that certain functions may do nothing if the provided arguments are incorrect or Lua can't access game elements for some reasons. [Click here to learn more about available functions](RandoLua/Functions.md).
@@ -23,9 +23,9 @@ The game provides many global functions that can be used to change game's behavi
 Events are Lua functions that are called by server when certain conditions are met. They have no default implementation, so they can be binded by server hosts to execute custom logic. The best place to do this is `lib.lua` as it's always loaded but it can be done in a different script as well. To bind an event, simply create a global function that has the same name as the event. [Click here to learn more about available events](RandoLua/Events.md).
 
 ## Using commands in game
-Every text-chat message starting with `/` will be send to server as a command. The server parses commands into Lua function calls. Whitespaces are used as argument seperetors. To provide a string argument, enclose the text inside quotation marks. Examples:
+Every text-chat message starting with `/` will be send to server as a command. The server parses commands into Lua function calls. Whitespaces are used as argument seperetors. If you want whitespace in your string args, use `\_` instead. If you want to use Lua variable value in your command, enter `$` before variable name. Examples:
 
-Text-chat message: /MsgAll "Hello There!" 56 0 120
+Text-chat message: /MsgAll Hello\\_There! 56 0 120
 
 Lua code equivalent: MsgAll("Hello There!",56,0,120)
 
@@ -33,11 +33,11 @@ Text-chat message: /DamagePlayer 2 400
 
 Lua code equivalent: DamagePlayer(2,400)
 
-Text-chat message: /MsgAll MyVar 100
+Text-chat message: /MsgAll $MyVar 100
 
 Lua code equivalent: MsgAll(MyVar,100)
 
-Text-chat message: /MsgTo "He_llo W" 3
+Text-chat message: /MsgTo He_llo\\_W 3
 
 Lua code equivalent: MsgTo("He_llo W",3)
 
