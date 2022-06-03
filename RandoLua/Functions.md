@@ -10,7 +10,7 @@ Reloads JSON serverdata with a provided server file if it exists. Returns true i
 Reloads JSON serverdata with default file. Returns true if reload completed successfully, returns false otherwise.
 
 ### ChangeMap(MapURL)
-Opens a map from URL. The server will open it's default map if the map from url doesn't exist.
+Opens a map from URL. The server will open it's default map if the map from url doesn't exist. [Click here to see available maps](../Values/Maps.md).
 
 ### ResetMap()
 Restarts current server map.
