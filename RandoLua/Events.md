@@ -9,10 +9,13 @@ Called before a new map is loaded.
 ### OnMatchStart()
 Called when the match starts.
 
+### OnNextStage(MapName, StageId)
+Called when the Campaign match starts a new stage.
+
 ### OnMatchEnd()
 Called when the match ends.
 
-### OnPlayerJoin(NewPlayerId)
+### OnPlayerJoin(NewPlayerName, NewPlayerId)
 Called when new player joins the server.
 
 ### OnPlayerLeave(PlayerName, PlayerId)
